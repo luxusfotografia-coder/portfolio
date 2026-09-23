@@ -11,27 +11,18 @@
     /* tinta y superficies */
     --ink:#14181C;
     --body:#3B434E;
-    --muted:#5F6875;
+    --muted:#667080;
     --rule:#E4E8EC;
     --bg:#FFFFFF;
     --soft:#F6F8F9;
     --dark:#16161A;
 
-    /* paleta del diamante de Luxus — puros, para fondo y detalle */
-    --naranja:#F09000;
-    --teal:#00A8A8;
-    --azul:#0090C0;
-    --verde:#00A830;
-    --rosa:#F00048;
-    --amarillo:#F0D800;
-    --magenta:#D83090;
-
-    /* versiones para TEXTO sobre blanco (todas ≥4.5:1) */
-    --teal-t:#0E7C7B;
-    --naranja-t:#B35C06;
-    --azul-t:#0B6E96;
-    --magenta-t:#A81F6B;
-    --verde-t:#07701F;
+    /* PALETA — origen: diamante de Luxus, reducida a 2 colores.
+       El espectro completo vive solo en el logo, como cita, no como sistema. */
+    --primario:#F09000;      /* naranja Luxus — decorativo, 2.42:1 */
+    --primario-t:#B35C06;    /* para texto — 4.72:1 */
+    --secundario:#00A8A8;    /* teal Luxus — decorativo, 2.93:1 */
+    --secundario-t:#0E7C7B;  /* para texto — 5.01:1 */
 
     --maxw:1080px;
   }
@@ -48,15 +39,10 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
 
   /* franja del diamante: la firma visual del sitio */
-  .spectrum{height:5px;display:grid;grid-template-columns:repeat(7,1fr);}
+  .spectrum{height:3px;display:grid;grid-template-columns:2fr 1fr;}
   .spectrum i{display:block;}
-  .spectrum i:nth-child(1){background:var(--magenta);}
-  .spectrum i:nth-child(2){background:var(--amarillo);}
-  .spectrum i:nth-child(3){background:var(--verde);}
-  .spectrum i:nth-child(4){background:var(--rosa);}
-  .spectrum i:nth-child(5){background:var(--azul);}
-  .spectrum i:nth-child(6){background:var(--naranja);}
-  .spectrum i:nth-child(7){background:var(--teal);}
+  .spectrum i:nth-child(1){background:var(--primario);}
+  .spectrum i:nth-child(2){background:var(--secundario);}
 
   /* ---------- NAV ---------- */
   nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);}
@@ -64,27 +50,27 @@
   nav .me{font-weight:700;color:var(--ink);font-size:15px;letter-spacing:-.01em;}
   nav ul{display:flex;gap:22px;list-style:none;font-size:14px;}
   nav a{text-decoration:none;color:var(--muted);padding-bottom:2px;border-bottom:2px solid transparent;}
-  nav a:hover{color:var(--teal-t);border-color:var(--teal);}
+  nav a:hover{color:var(--secundario-t);border-color:var(--secundario);}
   @media(max-width:620px){ nav ul{display:none;} }
 
   /* ---------- HERO ---------- */
   header.hero{padding:70px 0 58px;background:linear-gradient(170deg,#FFFFFF 0%,#F4F8F9 100%);border-bottom:1px solid var(--rule);}
   .hero-grid{display:grid;grid-template-columns:160px minmax(0,1fr);gap:40px;align-items:center;}
-  .photo-ring{width:160px;height:160px;border-radius:50%;padding:5px;background:conic-gradient(var(--magenta),var(--amarillo),var(--verde),var(--rosa),var(--azul),var(--naranja),var(--teal),var(--magenta));}
-  .photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%;border:4px solid #fff;}
+  .photo-ring{width:160px;height:160px;border-radius:50%;padding:3px;background:var(--rule);}
+  .photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid #fff;}
   h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:46px;line-height:1.04;color:var(--ink);letter-spacing:-.018em;}
-  .role{margin-top:10px;font-size:17px;font-weight:600;color:var(--teal-t);}
-  .role b{color:var(--naranja-t);font-weight:600;}
+  .role{margin-top:10px;font-size:17px;font-weight:600;color:var(--secundario-t);}
+  .role b{color:var(--primario-t);font-weight:600;}
   .pitch{margin-top:16px;font-size:16.5px;max-width:60ch;}
   .links{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;}
   .links a{display:inline-block;max-width:100%;overflow-wrap:anywhere;padding:9px 17px;border:1.5px solid var(--rule);border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;color:var(--body);transition:.15s;}
-  .links a:hover{border-color:var(--teal);color:var(--teal-t);}
-  .links a.primary{background:var(--teal-t);border-color:var(--teal-t);color:#fff;}
+  .links a:hover{border-color:var(--secundario);color:var(--secundario-t);}
+  .links a.primary{background:var(--secundario-t);border-color:var(--secundario-t);color:#fff;}
   .links a.primary:hover{background:var(--ink);border-color:var(--ink);color:#fff;}
 
   /* cifras */
   .stats{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-  .stat{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:16px 18px;border-top:4px solid var(--c,var(--teal));}
+  .stat{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:16px 18px;border-top:3px solid var(--primario);}
   .stat b{display:block;font-size:26px;font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-.02em;}
   .stat span{font-size:12.5px;color:var(--muted);display:block;margin-top:3px;line-height:1.35;}
   @media(max-width:760px){ .stats{grid-template-columns:repeat(2,1fr);} }
@@ -111,12 +97,12 @@
   .case-media img{width:100%;height:auto;}
   .case-media.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--rule);}
   .case-media.pair img{width:100%;height:100%;object-fit:cover;}
-  .kicker{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--c,var(--teal-t));margin-bottom:7px;}
+  .kicker{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--c,var(--secundario-t));margin-bottom:7px;}
   .case h3{font-size:21px;color:var(--ink);font-weight:700;margin-bottom:10px;letter-spacing:-.015em;line-height:1.25;}
   .case p{font-size:15.5px;}
   .case .tags{margin-top:15px;display:flex;flex-wrap:wrap;gap:7px;}
-  .tag{font-size:12px;padding:4px 11px;border-radius:999px;background:#fff;color:var(--c,var(--teal-t));border:1.5px solid var(--c,var(--teal));font-weight:500;}
-  .case .live{margin-top:16px;display:inline-block;font-size:14px;font-weight:700;color:var(--c,var(--teal-t));text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:1px;}
+  .tag{font-size:12px;padding:4px 11px;border-radius:999px;background:var(--soft);color:var(--muted);border:1px solid var(--rule);font-weight:500;}
+  .case .live{margin-top:16px;display:inline-block;font-size:14px;font-weight:700;color:var(--c,var(--secundario-t));text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:1px;}
   .case .live:hover{color:var(--ink);}
   @media(max-width:760px){
     .case{grid-template-columns:1fr;gap:20px;}
@@ -128,14 +114,14 @@
   /* ---------- LUXUS (oscuro) ---------- */
   #luxus{background:var(--dark);color:#C9CFD6;}
   #luxus h2,#luxus h3{color:#fff;}
-  #luxus .eyebrow{color:var(--naranja);}
+  #luxus .eyebrow{color:var(--primario);}
   #luxus .case-media{background:#232328;border-color:#34343B;box-shadow:none;}
-  #luxus .tag{background:transparent;}
-  #luxus .kicker{color:var(--c,var(--teal));}
+  #luxus .tag{background:#232328;border-color:#3A3A42;color:#A9B1BA;}
+  #luxus .kicker{color:var(--c,var(--secundario));}
   .luxus-brand{display:flex;align-items:center;gap:20px;margin-bottom:14px;}
   .luxus-brand img{width:74px;height:74px;object-fit:contain;flex:none;background:#fff;border-radius:14px;padding:9px;}
   .ig{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:9px 17px;border:1.5px solid #3A3A42;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;color:#fff;}
-  .ig:hover{border-color:var(--naranja);color:var(--naranja);}
+  .ig:hover{border-color:var(--primario);color:var(--primario);}
 
   /* ---------- PENDIENTE ---------- */
   .soon{border:1.5px dashed #C7D0D8;border-radius:12px;padding:30px;text-align:center;color:#8A939C;font-size:14px;background:var(--soft);}
@@ -149,7 +135,7 @@
 </head>
 <body>
 
-<div class="spectrum"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="spectrum"><i></i><i></i></div>
 
 <nav>
   <div class="wrap">
@@ -178,17 +164,17 @@
         </p>
         <div class="links">
           <a class="primary" href="#corporativo">Ver trabajos</a>
-          <a href="mailto:belencaa.90@gmail.com">belencaa.90@gmail.com</a>
+          <a href="mailto:luxusfotografia@gmail.com">luxusfotografia@gmail.com</a>
           <a href="#contacto">Contacto</a>
         </div>
       </div>
     </div>
 
     <div class="stats">
-      <div class="stat" style="--c:var(--azul)"><b>+120</b><span>productos en el catálogo digital</span></div>
-      <div class="stat" style="--c:var(--naranja)"><b>55</b><span>proyectos gestionados en agenda</span></div>
-      <div class="stat" style="--c:var(--verde)"><b>22</b><span>fichas técnicas publicadas</span></div>
-      <div class="stat" style="--c:var(--magenta)"><b>+2.800</b><span>seguidores de marca propia</span></div>
+      <div class="stat"><b>+120</b><span>productos en la lista comercial</span></div>
+      <div class="stat"><b>55</b><span>proyectos gestionados en agenda</span></div>
+      <div class="stat"><b>22</b><span>fichas técnicas publicadas</span></div>
+      <div class="stat"><b>+2.800</b><span>seguidores de marca propia</span></div>
     </div>
   </div>
 </header>
@@ -197,7 +183,7 @@
 <section id="corporativo">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow" style="color:var(--azul-t)">Trabajo corporativo</div>
+      <div class="eyebrow" style="color:var(--secundario-t)">Trabajo corporativo</div>
       <h2>Marketing y comunicación para la industria de la salud</h2>
       <p>
         Piezas producidas en relación de dependencia para una empresa de insumos y
@@ -208,7 +194,7 @@
 
     <div class="cases">
 
-      <article class="case" style="--c:var(--azul-t)">
+      <article class="case">
         <div class="case-media pair">
           <img src="assets/img/web/catalogo-01.jpg" alt="Tapa del catálogo institucional">
           <img src="assets/img/web/catalogo-05.jpg" alt="Interior del catálogo institucional">
@@ -220,11 +206,11 @@
             Libro A4 de 28 páginas con sistema de color por capítulo. Del concepto y la
             organización del contenido hasta el archivo final de imprenta.
           </p>
-          <div class="tags" style="--c:var(--azul)"><span class="tag" style="--c:var(--azul-t)">Dirección de arte</span><span class="tag" style="--c:var(--azul-t)">Editorial</span><span class="tag" style="--c:var(--azul-t)">Preprensa</span></div>
+          <div class="tags"><span class="tag">Dirección de arte</span><span class="tag">Editorial</span><span class="tag">Preprensa</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--naranja-t)">
+      <article class="case">
         <div class="case-media pair">
           <img src="assets/img/web/folleto-prp.jpg" alt="Folleto de la línea PRP">
           <img src="assets/img/web/folleto-tubos.jpg" alt="Folleto de tubos">
@@ -237,11 +223,11 @@
             para que el equipo los use frente al cliente. Incluye el lanzamiento de la
             línea de insumos PRP.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--naranja-t)">Fotografía</span><span class="tag" style="--c:var(--naranja-t)">Ficha técnica</span><span class="tag" style="--c:var(--naranja-t)">Impresión</span></div>
+          <div class="tags"><span class="tag">Fotografía</span><span class="tag">Ficha técnica</span><span class="tag">Impresión</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--verde-t)">
+      <article class="case">
         <div class="case-media pair">
           <img src="assets/img/web/etiquetas-vacio.jpg" alt="Etiquetas línea vacío">
           <img src="assets/img/web/etiquetas-tradicional.jpg" alt="Etiquetas línea tradicional">
@@ -253,11 +239,11 @@
             Archivos madre para más de 25 modelos, con criterio unificado de códigos, color
             y contenido técnico. Una etiqueta nueva sale del archivo y no se dibuja de cero.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--verde-t)">Packaging</span><span class="tag" style="--c:var(--verde-t)">Sistema</span><span class="tag" style="--c:var(--verde-t)">Producción</span></div>
+          <div class="tags"><span class="tag">Packaging</span><span class="tag">Sistema</span><span class="tag">Producción</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--magenta-t)">
+      <article class="case">
         <div class="case-media">
           <img src="assets/img/web/calilab.jpg" alt="Carpeta comercial del congreso">
         </div>
@@ -269,11 +255,11 @@
             El análisis comparativo de 13 propuestas de proveedores para la decisión de
             inversión también salió de acá.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--magenta-t)">Stand</span><span class="tag" style="--c:var(--magenta-t)">Gráfica de evento</span><span class="tag" style="--c:var(--magenta-t)">Proveedores</span></div>
+          <div class="tags"><span class="tag">Stand</span><span class="tag">Gráfica de evento</span><span class="tag">Proveedores</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--teal-t)">
+      <article class="case">
         <div class="case-media soon">Video institucional<br><small>pendiente de cargar</small></div>
         <div>
           <div class="kicker">Audiovisual</div>
@@ -283,7 +269,7 @@
             contenido que se repite mes a mes se rearma cambiando los datos, sin volver a
             producir el video.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--teal-t)">Guion</span><span class="tag" style="--c:var(--teal-t)">Motion</span><span class="tag" style="--c:var(--teal-t)">Render 4K</span></div>
+          <div class="tags"><span class="tag">Guion</span><span class="tag">Motion</span><span class="tag">Render 4K</span></div>
         </div>
       </article>
 
@@ -295,7 +281,7 @@
 <section id="desarrollo" style="background:var(--soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow" style="color:var(--naranja-t)">Desarrollo a medida</div>
+      <div class="eyebrow" style="color:var(--primario-t)">Desarrollo a medida</div>
       <h2>Las herramientas que el área necesitaba, hechas por mí</h2>
       <p>
         Aplicaciones web que uso y mantengo todos los días. No son maquetas: están en
@@ -305,7 +291,7 @@
 
     <div class="cases">
 
-      <article class="case" style="--c:var(--azul-t)">
+      <article class="case">
         <div class="case-media"><img src="assets/img/web/repertorio.jpg" alt="ReperTublood, repertorio virtual de fichas técnicas"></div>
         <div>
           <div class="kicker">Aplicación web</div>
@@ -315,11 +301,11 @@
             o uso, filtros y descarga directa del PDF. El equipo comercial encuentra la
             ficha que necesita sin pedirla.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--azul-t)">Buscador</span><span class="tag" style="--c:var(--azul-t)">Filtros</span><span class="tag" style="--c:var(--azul-t)">HTML · CSS · JS</span></div>
+          <div class="tags"><span class="tag">Buscador</span><span class="tag">Filtros</span><span class="tag">HTML · CSS · JS</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--naranja-t)">
+      <article class="case">
         <div class="case-media"><img src="assets/img/web/agenda.jpg" alt="Agenda de proyectos con estados y filtros"></div>
         <div>
           <div class="kicker">Gestión</div>
@@ -329,35 +315,36 @@
             pieza. Filtros por mes, buscador y exportación. La hice para ordenar mi propio
             trabajo y hoy es el registro del área.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--naranja-t)">Estados</span><span class="tag" style="--c:var(--naranja-t)">Export JSON</span><span class="tag" style="--c:var(--naranja-t)">Gestión propia</span></div>
+          <div class="tags"><span class="tag">Estados</span><span class="tag">Export JSON</span><span class="tag">Gestión propia</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--verde-t)">
-        <div class="case-media soon">Capturas del catálogo web<br><small>pendientes de cargar</small></div>
+
+      <article class="case">
+        <div class="case-media"><img src="assets/img/web/lista-productos.jpg" alt="Lista de productos comercial"></div>
         <div>
-          <div class="kicker">Catálogo digital</div>
-          <h3>Catálogo de más de 120 productos</h3>
+          <div class="kicker">Material comercial</div>
+          <h3>Lista de productos personalizada por comercial</h3>
           <p>
-            Una sola base de datos alimenta la versión web y el PDF descargable. Actualizar
-            un producto deja de ser rehacer el catálogo, y cada comercial comparte su propio
-            link frente al cliente.
+            La lista se genera desde una única base de datos y sale en una versión por cada
+            persona del equipo comercial, con sus datos de contacto. Actualizar un producto
+            deja de ser rehacer siete archivos.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--verde-t)">Base de datos</span><span class="tag" style="--c:var(--verde-t)">Web + PDF</span><span class="tag" style="--c:var(--verde-t)">Automatización</span></div>
+          <div class="tags"><span class="tag">Base de datos</span><span class="tag">PDF automatizado</span><span class="tag">Versión por vendedor</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--magenta-t)">
-        <div class="case-media soon">Generador de firmas<br><small>pendiente de cargar</small></div>
+      <article class="case">
+        <div class="case-media"><img src="assets/img/web/firmas.jpg" alt="Generador de firmas corporativas"></div>
         <div>
           <div class="kicker">Herramienta interna</div>
           <h3>Generador de firmas corporativas</h3>
           <p>
-            Cada persona arma e instala su firma de correo con QR sin pasar por el área de
-            diseño. Estandarizó la identidad visual de toda la empresa y eliminó el pedido
-            uno a uno.
+            Aplicación en Next.js con vista previa en vivo: cada persona carga sus datos,
+            valida el WhatsApp y descarga su firma lista para instalar. Estandarizó la
+            identidad de toda la empresa y eliminó el pedido uno a uno a diseño.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--magenta-t)">QR</span><span class="tag" style="--c:var(--magenta-t)">Autogestión</span><span class="tag" style="--c:var(--magenta-t)">Identidad</span></div>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Vista previa en vivo</span><span class="tag">QR</span></div>
         </div>
       </article>
 
@@ -386,7 +373,7 @@
 
     <div class="cases">
 
-      <article class="case" style="--c:var(--naranja)">
+      <article class="case">
         <div class="case-media soon">Capturas de la invitación<br><small>pendientes de cargar</small></div>
         <div>
           <div class="kicker">Desarrollo web</div>
@@ -396,12 +383,12 @@
             ubicación en mapa, playlist colaborativa y galería. Diseño, desarrollo y
             publicación propios, con concepto creativo por evento.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--naranja)">Astro</span><span class="tag" style="--c:var(--naranja)">Vercel</span><span class="tag" style="--c:var(--naranja)">RSVP</span></div>
+          <div class="tags"><span class="tag">Astro</span><span class="tag">Vercel</span><span class="tag">RSVP</span></div>
           <a class="live" href="https://15-delfi-two.vercel.app/" target="_blank" rel="noopener">Ver la invitación en vivo →</a>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--teal)">
+      <article class="case">
         <div class="case-media soon">Eventos empresariales<br><small>pendientes de cargar</small></div>
         <div>
           <div class="kicker">Fotografía corporativa</div>
@@ -410,11 +397,11 @@
             Cobertura de eventos corporativos e institucionales: la misma mirada que hoy
             aplico puertas adentro para la fotografía de producto y de congreso.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--teal)">Corporativo</span><span class="tag" style="--c:var(--teal)">Cobertura</span></div>
+          <div class="tags"><span class="tag">Corporativo</span><span class="tag">Cobertura</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--amarillo)">
+      <article class="case">
         <div class="case-media soon">Eventos sociales y books<br><small>pendientes de cargar</small></div>
         <div>
           <div class="kicker">Fotografía social</div>
@@ -423,11 +410,11 @@
             Casamientos, quince y books. El volumen de trabajo que sostuvo la marca y
             construyó la comunidad.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--amarillo)">Eventos</span><span class="tag" style="--c:var(--amarillo)">Edición</span></div>
+          <div class="tags"><span class="tag">Eventos</span><span class="tag">Edición</span></div>
         </div>
       </article>
 
-      <article class="case" style="--c:var(--rosa)">
+      <article class="case">
         <div class="case-media soon">Fotolibros y tarjetas<br><small>pendientes de cargar</small></div>
         <div>
           <div class="kicker">Piezas gráficas</div>
@@ -436,7 +423,7 @@
             Diseño y producción de los fotolibros, tarjetas y save the date de cada evento,
             con la identidad del estudio.
           </p>
-          <div class="tags"><span class="tag" style="--c:var(--rosa)">Editorial</span><span class="tag" style="--c:var(--rosa)">Impresión</span></div>
+          <div class="tags"><span class="tag">Editorial</span><span class="tag">Impresión</span></div>
         </div>
       </article>
 
@@ -444,7 +431,7 @@
   </div>
 </section>
 
-<div class="spectrum"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="spectrum"><i></i><i></i></div>
 
 <!-- ================= CONTACTO ================= -->
 <footer id="contacto">
@@ -452,7 +439,7 @@
     <h2>Hablemos</h2>
     <p>Buenos Aires, Argentina</p>
     <div class="links">
-      <a class="primary" href="mailto:belencaa.90@gmail.com">belencaa.90@gmail.com</a>
+      <a class="primary" href="mailto:luxusfotografia@gmail.com">luxusfotografia@gmail.com</a>
       <a href="tel:+541160139145">+54 11 6013-9145</a>
       <a href="https://www.instagram.com/luxusfotografia/" target="_blank" rel="noopener">Instagram · Luxus</a>
     </div>
