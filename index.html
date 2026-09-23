@@ -4,18 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Belén Caamaño — Marketing, Comunicación y Diseño</title>
-<meta name="description" content="Portfolio de Belén Caamaño. Marketing y comunicación en la industria de la salud, y Luxus Fotografía, marca propia de fotografía de eventos.">
+<meta name="description" content="Portfolio de Belén Caamaño. Marketing y comunicación en la industria de la salud, desarrollo a medida, y Luxus Fotografía, marca propia de fotografía de eventos.">
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
   :root{
-    --ink:#101418;
+    /* tinta y superficies */
+    --ink:#14181C;
     --body:#3B434E;
     --muted:#5F6875;
-    --accent:#1F5468;
-    --rule:#E2E7EB;
+    --rule:#E4E8EC;
     --bg:#FFFFFF;
-    --soft:#F5F7F8;
-    --luxus:#2B2B2B;
+    --soft:#F6F8F9;
+    --dark:#16161A;
+
+    /* paleta del diamante de Luxus — puros, para fondo y detalle */
+    --naranja:#F09000;
+    --teal:#00A8A8;
+    --azul:#0090C0;
+    --verde:#00A830;
+    --rosa:#F00048;
+    --amarillo:#F0D800;
+    --magenta:#D83090;
+
+    /* versiones para TEXTO sobre blanco (todas ≥4.5:1) */
+    --teal-t:#0E7C7B;
+    --naranja-t:#B35C06;
+    --azul-t:#0B6E96;
+    --magenta-t:#A81F6B;
+    --verde-t:#07701F;
+
     --maxw:1080px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -23,119 +40,123 @@
   body{
     overflow-x:hidden;
     font-family:"Inter",-apple-system,"Segoe UI",sans-serif;
-    color:var(--body);
-    background:var(--bg);
-    line-height:1.6;
+    color:var(--body);background:var(--bg);line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
   img{max-width:100%;display:block;}
   a{color:inherit;}
-
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
 
+  /* franja del diamante: la firma visual del sitio */
+  .spectrum{height:5px;display:grid;grid-template-columns:repeat(7,1fr);}
+  .spectrum i{display:block;}
+  .spectrum i:nth-child(1){background:var(--magenta);}
+  .spectrum i:nth-child(2){background:var(--amarillo);}
+  .spectrum i:nth-child(3){background:var(--verde);}
+  .spectrum i:nth-child(4){background:var(--rosa);}
+  .spectrum i:nth-child(5){background:var(--azul);}
+  .spectrum i:nth-child(6){background:var(--naranja);}
+  .spectrum i:nth-child(7){background:var(--teal);}
+
   /* ---------- NAV ---------- */
-  nav{
-    position:sticky;top:0;z-index:20;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--rule);
-  }
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px;min-width:0;}
+  nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px;min-width:0;}
   nav .me{font-weight:700;color:var(--ink);font-size:15px;letter-spacing:-.01em;}
   nav ul{display:flex;gap:22px;list-style:none;font-size:14px;}
-  nav a{text-decoration:none;color:var(--muted);}
-  nav a:hover{color:var(--accent);}
+  nav a{text-decoration:none;color:var(--muted);padding-bottom:2px;border-bottom:2px solid transparent;}
+  nav a:hover{color:var(--teal-t);border-color:var(--teal);}
   @media(max-width:620px){ nav ul{display:none;} }
 
   /* ---------- HERO ---------- */
-  header.hero{padding:76px 0 64px;border-bottom:1px solid var(--rule);}
-  .hero-grid{display:grid;grid-template-columns:140px minmax(0,1fr);gap:36px;align-items:center;}
-  .hero img{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:50% 20%;filter:grayscale(100%);}
-  h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:44px;line-height:1.05;color:var(--ink);letter-spacing:-.015em;}
-  .role{margin-top:10px;font-size:17px;font-weight:600;color:var(--accent);}
-  .pitch{margin-top:16px;font-size:16px;max-width:62ch;}
-  .links{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
-  .links a{
-    display:inline-block;max-width:100%;overflow-wrap:anywhere;padding:8px 15px;border:1px solid var(--rule);border-radius:999px;
-    font-size:14px;text-decoration:none;color:var(--body);transition:.15s;
-  }
-  .links a:hover{border-color:var(--accent);color:var(--accent);}
-  .links a.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+  header.hero{padding:70px 0 58px;background:linear-gradient(170deg,#FFFFFF 0%,#F4F8F9 100%);border-bottom:1px solid var(--rule);}
+  .hero-grid{display:grid;grid-template-columns:160px minmax(0,1fr);gap:40px;align-items:center;}
+  .photo-ring{width:160px;height:160px;border-radius:50%;padding:5px;background:conic-gradient(var(--magenta),var(--amarillo),var(--verde),var(--rosa),var(--azul),var(--naranja),var(--teal),var(--magenta));}
+  .photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%;border:4px solid #fff;}
+  h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:46px;line-height:1.04;color:var(--ink);letter-spacing:-.018em;}
+  .role{margin-top:10px;font-size:17px;font-weight:600;color:var(--teal-t);}
+  .role b{color:var(--naranja-t);font-weight:600;}
+  .pitch{margin-top:16px;font-size:16.5px;max-width:60ch;}
+  .links{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;}
+  .links a{display:inline-block;max-width:100%;overflow-wrap:anywhere;padding:9px 17px;border:1.5px solid var(--rule);border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;color:var(--body);transition:.15s;}
+  .links a:hover{border-color:var(--teal);color:var(--teal-t);}
+  .links a.primary{background:var(--teal-t);border-color:var(--teal-t);color:#fff;}
+  .links a.primary:hover{background:var(--ink);border-color:var(--ink);color:#fff;}
+
+  /* cifras */
+  .stats{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .stat{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:16px 18px;border-top:4px solid var(--c,var(--teal));}
+  .stat b{display:block;font-size:26px;font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-.02em;}
+  .stat span{font-size:12.5px;color:var(--muted);display:block;margin-top:3px;line-height:1.35;}
+  @media(max-width:760px){ .stats{grid-template-columns:repeat(2,1fr);} }
   @media(max-width:620px){
-    .hero-grid{grid-template-columns:1fr;gap:22px;}
-    .hero img{width:104px;height:104px;}
-    h1{font-size:34px;}
-    header.hero{padding:44px 0 40px;}
+    .hero-grid{grid-template-columns:1fr;gap:24px;}
+    .photo-ring{width:118px;height:118px;}
+    h1{font-size:35px;}
+    header.hero{padding:40px 0 38px;}
   }
 
   /* ---------- SECCIONES ---------- */
-  section{padding:70px 0;}
-  section + section{border-top:1px solid var(--rule);}
-  .sec-head{max-width:70ch;margin-bottom:38px;}
-  .eyebrow{
-    font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:10px;
-  }
-  h2{font-size:30px;line-height:1.15;color:var(--ink);font-weight:700;letter-spacing:-.015em;}
-  .sec-head p{margin-top:12px;font-size:16px;}
+  section{padding:74px 0;}
+  .sec-head{max-width:68ch;margin-bottom:40px;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:11px;display:inline-flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:"";width:22px;height:3px;background:currentColor;border-radius:2px;}
+  h2{font-size:32px;line-height:1.14;color:var(--ink);font-weight:700;letter-spacing:-.022em;}
+  .sec-head p{margin-top:13px;font-size:16.5px;}
 
   /* ---------- CASOS ---------- */
-  .cases{display:grid;gap:34px;}
-  .case{
-    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
-    gap:30px;align-items:center;
-  }
+  .cases{display:grid;gap:38px;}
+  .case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:32px;align-items:center;}
   .case:nth-child(even) .case-media{order:2;}
-  .case-media{background:var(--soft);border:1px solid var(--rule);border-radius:10px;overflow:hidden;}
+  .case-media{background:var(--soft);border:1px solid var(--rule);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(20,24,28,.05);}
   .case-media img{width:100%;height:auto;}
   .case-media.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--rule);}
   .case-media.pair img{width:100%;height:100%;object-fit:cover;}
-  .case h3{font-size:20px;color:var(--ink);font-weight:700;margin-bottom:9px;letter-spacing:-.01em;}
+  .kicker{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--c,var(--teal-t));margin-bottom:7px;}
+  .case h3{font-size:21px;color:var(--ink);font-weight:700;margin-bottom:10px;letter-spacing:-.015em;line-height:1.25;}
   .case p{font-size:15.5px;}
-  .case .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px;}
-  .tag{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--muted);border:1px solid var(--rule);}
-  .case .live{
-    margin-top:16px;display:inline-block;font-size:14px;font-weight:600;
-    color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;
-  }
+  .case .tags{margin-top:15px;display:flex;flex-wrap:wrap;gap:7px;}
+  .tag{font-size:12px;padding:4px 11px;border-radius:999px;background:#fff;color:var(--c,var(--teal-t));border:1.5px solid var(--c,var(--teal));font-weight:500;}
+  .case .live{margin-top:16px;display:inline-block;font-size:14px;font-weight:700;color:var(--c,var(--teal-t));text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:1px;}
+  .case .live:hover{color:var(--ink);}
   @media(max-width:760px){
-    .case{grid-template-columns:1fr;gap:18px;}
+    .case{grid-template-columns:1fr;gap:20px;}
     .case:nth-child(even) .case-media{order:0;}
-    section{padding:48px 0;}
-    h2{font-size:25px;}
+    section{padding:50px 0;}
+    h2{font-size:26px;}
   }
 
-  /* ---------- LUXUS ---------- */
-  #luxus{background:var(--luxus);color:#D9DCE0;border-top:none;}
-  #luxus h2, #luxus h3{color:#fff;}
-  #luxus .eyebrow{color:#9AA4AE;}
-  #luxus .case-media{background:#383838;border-color:#4A4A4A;}
-  #luxus .tag{background:#383838;border-color:#4A4A4A;color:#AEB6BE;}
-  #luxus .live{color:#fff;}
-  .luxus-brand{display:flex;align-items:center;gap:18px;margin-bottom:8px;}
-  .luxus-brand img{width:62px;height:62px;object-fit:contain;}
+  /* ---------- LUXUS (oscuro) ---------- */
+  #luxus{background:var(--dark);color:#C9CFD6;}
+  #luxus h2,#luxus h3{color:#fff;}
+  #luxus .eyebrow{color:var(--naranja);}
+  #luxus .case-media{background:#232328;border-color:#34343B;box-shadow:none;}
+  #luxus .tag{background:transparent;}
+  #luxus .kicker{color:var(--c,var(--teal));}
+  .luxus-brand{display:flex;align-items:center;gap:20px;margin-bottom:14px;}
+  .luxus-brand img{width:74px;height:74px;object-fit:contain;flex:none;background:#fff;border-radius:14px;padding:9px;}
+  .ig{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:9px 17px;border:1.5px solid #3A3A42;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;color:#fff;}
+  .ig:hover{border-color:var(--naranja);color:var(--naranja);}
 
-  /* ---------- PENDIENTE (solo local) ---------- */
-  .soon{
-    border:1px dashed #C2CBD3;border-radius:10px;padding:26px;text-align:center;
-    color:#8A939C;font-size:14px;background:repeating-linear-gradient(45deg,#FAFBFC,#FAFBFC 10px,#F3F5F7 10px,#F3F5F7 20px);
-  }
-  #luxus .soon{border-color:#555;background:#333;color:#8A939C;}
+  /* ---------- PENDIENTE ---------- */
+  .soon{border:1.5px dashed #C7D0D8;border-radius:12px;padding:30px;text-align:center;color:#8A939C;font-size:14px;background:var(--soft);}
+  #luxus .soon{border-color:#3A3A42;background:#1E1E23;color:#7A828B;}
 
   /* ---------- FOOTER ---------- */
-  footer{background:var(--soft);padding:52px 0;border-top:1px solid var(--rule);}
-  footer h2{font-size:24px;margin-bottom:10px;}
-  footer .links{margin-top:20px;}
-  .fine{margin-top:28px;font-size:13px;color:var(--muted);}
+  footer{background:var(--soft);padding:56px 0;border-top:1px solid var(--rule);}
+  footer h2{font-size:26px;margin-bottom:10px;}
+  .fine{margin-top:30px;font-size:13px;color:var(--muted);max-width:66ch;}
 </style>
 </head>
 <body>
+
+<div class="spectrum"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
 <nav>
   <div class="wrap">
     <span class="me">Belén Caamaño</span>
     <ul>
-      <li><a href="#tublood">Corporativo</a></li>
+      <li><a href="#corporativo">Corporativo</a></li>
+      <li><a href="#desarrollo">Desarrollo</a></li>
       <li><a href="#luxus">Luxus</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -143,145 +164,200 @@
 </nav>
 
 <header class="hero">
-  <div class="wrap hero-grid">
-    <img src="assets/img/web/belen.jpg" alt="Belén Caamaño">
-    <div>
-      <h1>Belén Caamaño</h1>
-      <div class="role">Marketing y Comunicación · Diseño · Desarrollo a medida</div>
-      <p class="pitch">
-        17 años en el sector salud y diagnóstico. Hoy llevo la comunicación de una empresa
-        de insumos para laboratorios: defino la marca, produzco el material comercial y
-        desarrollo las herramientas digitales que el área necesita. Antes construí
-        Luxus Fotografía, mi propio estudio de eventos.
-      </p>
-      <div class="links">
-        <a class="primary" href="#tublood">Ver trabajos</a>
-        <a href="mailto:belencaa.90@gmail.com">belencaa.90@gmail.com</a>
-        <a href="#contacto">Contacto</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="photo-ring"><img src="assets/img/web/belen.jpg" alt="Belén Caamaño"></div>
+      <div>
+        <h1>Belén Caamaño</h1>
+        <div class="role">Marketing y Comunicación · Diseño · <b>Desarrollo a medida</b></div>
+        <p class="pitch">
+          17 años en el sector salud y diagnóstico. Hoy llevo la comunicación de una empresa
+          de insumos para laboratorios: defino la marca, produzco el material comercial y
+          desarrollo las herramientas digitales que el área necesita. Antes construí
+          Luxus Fotografía, mi propio estudio de eventos.
+        </p>
+        <div class="links">
+          <a class="primary" href="#corporativo">Ver trabajos</a>
+          <a href="mailto:belencaa.90@gmail.com">belencaa.90@gmail.com</a>
+          <a href="#contacto">Contacto</a>
+        </div>
       </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat" style="--c:var(--azul)"><b>+120</b><span>productos en el catálogo digital</span></div>
+      <div class="stat" style="--c:var(--naranja)"><b>55</b><span>proyectos gestionados en agenda</span></div>
+      <div class="stat" style="--c:var(--verde)"><b>22</b><span>fichas técnicas publicadas</span></div>
+      <div class="stat" style="--c:var(--magenta)"><b>+2.800</b><span>seguidores de marca propia</span></div>
     </div>
   </div>
 </header>
 
-<!-- ================= TUBLOOD ================= -->
-<section id="tublood">
+<!-- ================= CORPORATIVO ================= -->
+<section id="corporativo">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Trabajo corporativo</div>
+      <div class="eyebrow" style="color:var(--azul-t)">Trabajo corporativo</div>
       <h2>Marketing y comunicación para la industria de la salud</h2>
       <p>
         Piezas producidas en relación de dependencia para una empresa de insumos y
-        equipamiento de laboratorio. El sistema visual, el material comercial y las
-        herramientas internas que usa el equipo todos los días.
+        equipamiento de laboratorio: el sistema visual, el material comercial y la
+        presencia en congresos del sector.
       </p>
     </div>
 
     <div class="cases">
 
-      <article class="case">
-        <div class="case-media soon" id="slot-catalogo-web">
-          Capturas del catálogo web<br><small>pendientes de cargar</small>
-        </div>
-        <div>
-          <h3>Catálogo digital de más de 120 productos</h3>
-          <p>
-            Una sola base de datos alimenta la versión web y el PDF descargable.
-            Actualizar un precio o una ficha deja de ser rehacer el catálogo, y cada
-            comercial comparte su propio link frente al cliente.
-          </p>
-          <div class="tags"><span class="tag">Desarrollo web</span><span class="tag">Base de datos</span><span class="tag">Automatización</span></div>
-        </div>
-      </article>
-
-      <article class="case">
+      <article class="case" style="--c:var(--azul-t)">
         <div class="case-media pair">
           <img src="assets/img/web/catalogo-01.jpg" alt="Tapa del catálogo institucional">
           <img src="assets/img/web/catalogo-05.jpg" alt="Interior del catálogo institucional">
         </div>
         <div>
+          <div class="kicker">Editorial</div>
           <h3>Catálogo institucional impreso</h3>
           <p>
             Libro A4 de 28 páginas con sistema de color por capítulo. Del concepto y la
             organización del contenido hasta el archivo final de imprenta.
           </p>
-          <div class="tags"><span class="tag">Editorial</span><span class="tag">Dirección de arte</span><span class="tag">Preprensa</span></div>
+          <div class="tags" style="--c:var(--azul)"><span class="tag" style="--c:var(--azul-t)">Dirección de arte</span><span class="tag" style="--c:var(--azul-t)">Editorial</span><span class="tag" style="--c:var(--azul-t)">Preprensa</span></div>
         </div>
       </article>
 
-      <article class="case">
+      <article class="case" style="--c:var(--naranja-t)">
         <div class="case-media pair">
           <img src="assets/img/web/folleto-prp.jpg" alt="Folleto de la línea PRP">
           <img src="assets/img/web/folleto-tubos.jpg" alt="Folleto de tubos">
         </div>
         <div>
+          <div class="kicker">Marketing de producto</div>
           <h3>Línea de material técnico comercial</h3>
           <p>
             Más de 10 folletos de producto con fotografía propia y ficha técnica, pensados
             para que el equipo los use frente al cliente. Incluye el lanzamiento de la
             línea de insumos PRP.
           </p>
-          <div class="tags"><span class="tag">Marketing de producto</span><span class="tag">Fotografía</span><span class="tag">Impresión</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--naranja-t)">Fotografía</span><span class="tag" style="--c:var(--naranja-t)">Ficha técnica</span><span class="tag" style="--c:var(--naranja-t)">Impresión</span></div>
         </div>
       </article>
 
-      <article class="case">
+      <article class="case" style="--c:var(--verde-t)">
         <div class="case-media pair">
           <img src="assets/img/web/etiquetas-vacio.jpg" alt="Etiquetas línea vacío">
           <img src="assets/img/web/etiquetas-tradicional.jpg" alt="Etiquetas línea tradicional">
         </div>
         <div>
-          <h3>Sistema de etiquetas y fichas técnicas</h3>
+          <div class="kicker">Sistema de diseño</div>
+          <h3>Etiquetas y fichas técnicas de producto</h3>
           <p>
-            Archivos madre para más de 25 modelos de producto, con criterio unificado de
-            códigos, color y contenido técnico. Una etiqueta nueva sale del archivo y no
-            se dibuja de cero.
+            Archivos madre para más de 25 modelos, con criterio unificado de códigos, color
+            y contenido técnico. Una etiqueta nueva sale del archivo y no se dibuja de cero.
           </p>
-          <div class="tags"><span class="tag">Sistema de diseño</span><span class="tag">Packaging</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--verde-t)">Packaging</span><span class="tag" style="--c:var(--verde-t)">Sistema</span><span class="tag" style="--c:var(--verde-t)">Producción</span></div>
         </div>
       </article>
 
-      <article class="case">
+      <article class="case" style="--c:var(--magenta-t)">
         <div class="case-media">
           <img src="assets/img/web/calilab.jpg" alt="Carpeta comercial del congreso">
         </div>
         <div>
+          <div class="kicker">Event marketing</div>
           <h3>Presencia en congresos del sector</h3>
           <p>
             Folletería, banners de stand, merchandising y la gráfica completa del evento.
             El análisis comparativo de 13 propuestas de proveedores para la decisión de
             inversión también salió de acá.
           </p>
-          <div class="tags"><span class="tag">Event marketing</span><span class="tag">Gráfica de stand</span><span class="tag">Proveedores</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--magenta-t)">Stand</span><span class="tag" style="--c:var(--magenta-t)">Gráfica de evento</span><span class="tag" style="--c:var(--magenta-t)">Proveedores</span></div>
         </div>
       </article>
 
-      <article class="case">
-        <div class="case-media soon" id="slot-video">
-          Video institucional<br><small>pendiente de cargar</small>
-        </div>
+      <article class="case" style="--c:var(--teal-t)">
+        <div class="case-media soon">Video institucional<br><small>pendiente de cargar</small></div>
         <div>
+          <div class="kicker">Audiovisual</div>
           <h3>Video institucional</h3>
           <p>
             Pieza que recorre la historia de la empresa, del guion al render final. El
             contenido que se repite mes a mes se rearma cambiando los datos, sin volver a
             producir el video.
           </p>
-          <div class="tags"><span class="tag">Audiovisual</span><span class="tag">Guion</span><span class="tag">Motion</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--teal-t)">Guion</span><span class="tag" style="--c:var(--teal-t)">Motion</span><span class="tag" style="--c:var(--teal-t)">Render 4K</span></div>
         </div>
       </article>
 
-      <article class="case">
-        <div class="case-media soon" id="slot-herramientas">
-          Herramientas internas<br><small>pendientes de cargar</small>
-        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DESARROLLO ================= -->
+<section id="desarrollo" style="background:var(--soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--naranja-t)">Desarrollo a medida</div>
+      <h2>Las herramientas que el área necesitaba, hechas por mí</h2>
+      <p>
+        Aplicaciones web que uso y mantengo todos los días. No son maquetas: están en
+        producción y las usa el equipo.
+      </p>
+    </div>
+
+    <div class="cases">
+
+      <article class="case" style="--c:var(--azul-t)">
+        <div class="case-media"><img src="assets/img/web/repertorio.jpg" alt="ReperTublood, repertorio virtual de fichas técnicas"></div>
         <div>
-          <h3>Herramientas internas</h3>
+          <div class="kicker">Aplicación web</div>
+          <h3>ReperTublood — repertorio virtual de fichas técnicas</h3>
           <p>
-            Generador de firmas corporativas con QR que cada persona instala sin pasar por
-            diseño, agenda de proyectos con estado por semáforo y una aplicación de juego
-            para captar contactos en el stand, con premio resuelto en el servidor.
+            22 fichas organizadas en 6 categorías, con buscador por producto, color de tapón
+            o uso, filtros y descarga directa del PDF. El equipo comercial encuentra la
+            ficha que necesita sin pedirla.
           </p>
-          <div class="tags"><span class="tag">Desarrollo interno</span><span class="tag">Automatización</span><span class="tag">QR</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--azul-t)">Buscador</span><span class="tag" style="--c:var(--azul-t)">Filtros</span><span class="tag" style="--c:var(--azul-t)">HTML · CSS · JS</span></div>
+        </div>
+      </article>
+
+      <article class="case" style="--c:var(--naranja-t)">
+        <div class="case-media"><img src="assets/img/web/agenda.jpg" alt="Agenda de proyectos con estados y filtros"></div>
+        <div>
+          <div class="kicker">Gestión</div>
+          <h3>Agenda de proyectos</h3>
+          <p>
+            55 proyectos con estado por semáforo, prioridad, responsable y miniatura de cada
+            pieza. Filtros por mes, buscador y exportación. La hice para ordenar mi propio
+            trabajo y hoy es el registro del área.
+          </p>
+          <div class="tags"><span class="tag" style="--c:var(--naranja-t)">Estados</span><span class="tag" style="--c:var(--naranja-t)">Export JSON</span><span class="tag" style="--c:var(--naranja-t)">Gestión propia</span></div>
+        </div>
+      </article>
+
+      <article class="case" style="--c:var(--verde-t)">
+        <div class="case-media soon">Capturas del catálogo web<br><small>pendientes de cargar</small></div>
+        <div>
+          <div class="kicker">Catálogo digital</div>
+          <h3>Catálogo de más de 120 productos</h3>
+          <p>
+            Una sola base de datos alimenta la versión web y el PDF descargable. Actualizar
+            un producto deja de ser rehacer el catálogo, y cada comercial comparte su propio
+            link frente al cliente.
+          </p>
+          <div class="tags"><span class="tag" style="--c:var(--verde-t)">Base de datos</span><span class="tag" style="--c:var(--verde-t)">Web + PDF</span><span class="tag" style="--c:var(--verde-t)">Automatización</span></div>
+        </div>
+      </article>
+
+      <article class="case" style="--c:var(--magenta-t)">
+        <div class="case-media soon">Generador de firmas<br><small>pendiente de cargar</small></div>
+        <div>
+          <div class="kicker">Herramienta interna</div>
+          <h3>Generador de firmas corporativas</h3>
+          <p>
+            Cada persona arma e instala su firma de correo con QR sin pasar por el área de
+            diseño. Estandarizó la identidad visual de toda la empresa y eliminó el pedido
+            uno a uno.
+          </p>
+          <div class="tags"><span class="tag" style="--c:var(--magenta-t)">QR</span><span class="tag" style="--c:var(--magenta-t)">Autogestión</span><span class="tag" style="--c:var(--magenta-t)">Identidad</span></div>
         </div>
       </article>
 
@@ -296,80 +372,79 @@
       <div class="luxus-brand">
         <img src="assets/img/web/luxus-logo.png" alt="Logo de Luxus Fotografía">
         <div>
-          <div class="eyebrow" style="margin-bottom:2px">Marca propia</div>
-          <h2 style="font-size:26px">Luxus Fotografía</h2>
+          <div class="eyebrow" style="margin-bottom:4px">Marca propia</div>
+          <h2 style="font-size:28px">Luxus Fotografía</h2>
         </div>
       </div>
       <p>
-        Mi estudio de fotografía de eventos sociales y empresariales. Creé la identidad,
-        la cartera de clientes y una comunidad de más de 2.800 seguidores. Además de la
+        Mi estudio de fotografía de eventos sociales y empresariales. Creé la identidad, la
+        cartera de clientes y una comunidad de más de 2.800 seguidores. Además de la
         cobertura, produje las piezas gráficas y las invitaciones web de cada evento.
       </p>
+      <a class="ig" href="https://www.instagram.com/luxusfotografia/" target="_blank" rel="noopener">Ver en Instagram →</a>
     </div>
 
     <div class="cases">
 
-      <article class="case">
-        <div class="case-media soon" id="slot-invitacion">
-          Capturas de la invitación<br><small>pendientes de cargar</small>
-        </div>
+      <article class="case" style="--c:var(--naranja)">
+        <div class="case-media soon">Capturas de la invitación<br><small>pendientes de cargar</small></div>
         <div>
+          <div class="kicker">Desarrollo web</div>
           <h3>Invitaciones web con confirmación de asistencia</h3>
           <p>
             Sitios a medida para cada evento, con formulario de confirmación validado,
             ubicación en mapa, playlist colaborativa y galería. Diseño, desarrollo y
-            publicación propios.
+            publicación propios, con concepto creativo por evento.
           </p>
-          <div class="tags"><span class="tag">Astro</span><span class="tag">Vercel</span><span class="tag">HTML · CSS</span><span class="tag">RSVP</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--naranja)">Astro</span><span class="tag" style="--c:var(--naranja)">Vercel</span><span class="tag" style="--c:var(--naranja)">RSVP</span></div>
           <a class="live" href="https://15-delfi-two.vercel.app/" target="_blank" rel="noopener">Ver la invitación en vivo →</a>
         </div>
       </article>
 
-      <article class="case">
-        <div class="case-media soon" id="slot-empresariales">
-          Eventos empresariales<br><small>pendientes de cargar</small>
-        </div>
+      <article class="case" style="--c:var(--teal)">
+        <div class="case-media soon">Eventos empresariales<br><small>pendientes de cargar</small></div>
         <div>
+          <div class="kicker">Fotografía corporativa</div>
           <h3>Eventos empresariales</h3>
           <p>
             Cobertura de eventos corporativos e institucionales: la misma mirada que hoy
             aplico puertas adentro para la fotografía de producto y de congreso.
           </p>
-          <div class="tags"><span class="tag">Fotografía corporativa</span><span class="tag">Eventos</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--teal)">Corporativo</span><span class="tag" style="--c:var(--teal)">Cobertura</span></div>
         </div>
       </article>
 
-      <article class="case">
-        <div class="case-media soon" id="slot-sociales">
-          Eventos sociales<br><small>pendientes de cargar</small>
-        </div>
+      <article class="case" style="--c:var(--amarillo)">
+        <div class="case-media soon">Eventos sociales y books<br><small>pendientes de cargar</small></div>
         <div>
+          <div class="kicker">Fotografía social</div>
           <h3>Eventos sociales y books</h3>
           <p>
             Casamientos, quince y books. El volumen de trabajo que sostuvo la marca y
             construyó la comunidad.
           </p>
-          <div class="tags"><span class="tag">Fotografía</span><span class="tag">Edición</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--amarillo)">Eventos</span><span class="tag" style="--c:var(--amarillo)">Edición</span></div>
         </div>
       </article>
 
-      <article class="case">
-        <div class="case-media soon" id="slot-piezas">
-          Fotolibros y tarjetas<br><small>pendientes de cargar</small>
-        </div>
+      <article class="case" style="--c:var(--rosa)">
+        <div class="case-media soon">Fotolibros y tarjetas<br><small>pendientes de cargar</small></div>
         <div>
-          <h3>Fotolibros y piezas gráficas</h3>
+          <div class="kicker">Piezas gráficas</div>
+          <h3>Fotolibros y papelería de evento</h3>
           <p>
-            Diseño y producción de los fotolibros, tarjetas y save the date de cada
-            evento, con la identidad del estudio.
+            Diseño y producción de los fotolibros, tarjetas y save the date de cada evento,
+            con la identidad del estudio.
           </p>
-          <div class="tags"><span class="tag">Editorial</span><span class="tag">Impresión</span></div>
+          <div class="tags"><span class="tag" style="--c:var(--rosa)">Editorial</span><span class="tag" style="--c:var(--rosa)">Impresión</span></div>
         </div>
       </article>
 
     </div>
   </div>
 </section>
+
+<div class="spectrum"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- ================= CONTACTO ================= -->
 <footer id="contacto">
@@ -382,8 +457,8 @@
       <a href="https://www.instagram.com/luxusfotografia/" target="_blank" rel="noopener">Instagram · Luxus</a>
     </div>
     <p class="fine">
-      Las piezas corporativas se muestran a modo de portfolio profesional y pertenecen a
-      la empresa para la que fueron producidas.
+      Las piezas corporativas se muestran a modo de portfolio profesional y pertenecen a la
+      empresa para la que fueron producidas. Luxus Fotografía es una marca propia.
     </p>
   </div>
 </footer>
